@@ -1,0 +1,9 @@
+This project integrates and vendors third-party components:
+
+1) MOAProfiler — Apache-2.0
+   Source: https://github.com/pfizer-opensource/moa-profiler
+   Vendored/modified file: pipeline/3_embed_runner.py
+
+2) CellPaintSSL — BSD 3-Clause
+   Source: https://github.com/Bayer-Group/CellPaintSSL
+   Vendored/modified file: pipeline/6_post_proc_cellpaintssl.py
