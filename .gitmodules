@@ -1,0 +1,3 @@
+[submodule "submodules/cellpaintssl"]
+	path = submodules/cellpaintssl
+	url = git@github.com:Bayer-Group/CellPaintSSL.git
