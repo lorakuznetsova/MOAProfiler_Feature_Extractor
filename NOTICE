@@ -6,4 +6,4 @@ This project integrates and vendors third-party components:
 
 2) CellPaintSSL — BSD 3-Clause
    Source: https://github.com/Bayer-Group/CellPaintSSL
-   Vendored/modified file: pipeline/6_post_proc_cellpaintssl.py
+   Vendored/modified file: pipeline/post_proc_cellpaintssl.py
