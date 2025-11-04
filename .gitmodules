@@ -3,4 +3,4 @@
 	url = https://github.com/pfizer-opensource/moa-profiler.git
 [submodule "submodules/cellpaintssl"]
 	path = submodules/cellpaintssl
-	url = git@github.com:Bayer-Group/CellPaintSSL.git
+	url = https://github.com/Bayer-Group/CellPaintSSL.git
