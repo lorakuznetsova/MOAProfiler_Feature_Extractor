@@ -1,0 +1,3 @@
+[submodule "submodules/moa-profiler"]
+	path = submodules/moa-profiler
+	url = https://github.com/pfizer-opensource/moa-profiler.git
