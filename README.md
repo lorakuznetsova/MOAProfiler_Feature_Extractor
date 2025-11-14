@@ -138,7 +138,7 @@ Outputs:
 
 $OUT/well_features.csv
 
-$IN/dataset.csv
+$OUT/dataset.csv
 
 7) Post-process & aggregate (script 3, PyCytominer)
 Available normalization methods (single or chained combos, exactly as in inference.py):
