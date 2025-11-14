@@ -1,3 +1,4 @@
+-f https://download.pytorch.org/whl/torch_stable.html
 cycler==0.12.1
 fonttools==4.57.0
 joblib==1.4.2
