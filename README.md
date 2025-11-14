@@ -187,12 +187,12 @@ python "$REPO/pipeline/1_convert_moa_profiler_cellpaintssl.py" \
 # 2) dataset.csv
 python "$REPO/pipeline/2_prepare_cellpaintssl_dataset.py" \
   --meta "$IN/manifest.csv" \
-  --dataset-out "$IN/dataset.csv"
+  --dataset-out "$OUT/dataset.csv"
 
 # 3) post-proc + aggregate
 python "$REPO/pipeline/3_postprocess_cellpaintssl.py" \
   --embedding_csv "$OUT/well_features.csv" \
-  --val_csv       "$IN/dataset.csv" \
+  --val_csv       "$OUT/dataset.csv" \
   --operation     median \
   --norm_method   spherize_mad_robustize \
   --out_well_csv  "$OUT/well_features_normalized.csv" \
