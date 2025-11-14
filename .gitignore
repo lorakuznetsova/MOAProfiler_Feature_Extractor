@@ -1,1 +1,3 @@
 pipeline/run_cellpaintssl_postproc.sh
+**/.venv/
+envs/cellpaintssl_env/
