@@ -17,9 +17,7 @@ This repo provides a minimal, reproducible way to extract **MOAProfiler** embedd
 ---
 
 ## 1) Environment
-
 Create the conda env (Python 3.8):
-
 ```bash
 mamba env create -f env2.yml || conda env create -f env2.yml
 conda activate env2
