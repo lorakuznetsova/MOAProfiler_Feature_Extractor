@@ -205,6 +205,23 @@ Available --norm_method:
 - standardize_spherize
 - no_post_proc
 ```
+## Data: MOAProfiler_IN (Zenodo, ~29 GB)
 
+The preprocessed input data used in this work are publicly available on Zenodo:
+
+**Zenodo dataset:** https://doi.org/10.5281/zenodo.17617785
+
+Download the archive `MOAProfiler_IN_v0.1.tar.gz` (~29 GB) from the Zenodo record and extract it, e.g.:
+
+```bash
+mkdir -p ~/Paper_Validation/MOAProfiler_Data
+tar -xvzf MOAProfiler_IN_v0.1.tar.gz -C ~/Paper_Validation/MOAProfiler_Data
+```
+After extraction, the directory structure should look like:
+
+~/Paper_Validation/MOAProfiler_Data/MOAProfiler_IN/...
+
+Use this MOAProfiler_IN folder as the input data directory when running the
+embedding pipeline (e.g. pipeline/embed_runner.py) as described above.
 
 
