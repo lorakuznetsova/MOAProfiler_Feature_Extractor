@@ -62,8 +62,43 @@ print("torchvision", torchvision.__version__)
 print("timm", getattr(__import__('timm'), '__version__', 'n/a'))
 print("numpy/pandas/sklearn", numpy.__version__, pandas.__version__, sklearn.__version__)
 PY
+```
 You can keep env2.yml for documentation, but for reproducibility the freeze file is simpler and stable across machines.
 
 Clone the repo + submodule
 
 HTTPS (public):
+
+```bash
+PROJECT=~/Paper_Validation
+mkdir -p "$PROJECT/MOAProfiler_Data"/{MOAProfiler_IN,MOAProfiler_OUT}
+
+git clone https://github.com/lorakuznetsova/MOAProfiler_Feature_Extractor.git \
+  "$PROJECT/MOAProfiler_Feature_Extractor"
+
+cd "$PROJECT/MOAProfiler_Feature_Extractor"
+git submodule update --init --recursive
+```
+SSH (private fork) — optional:
+
+```bash
+PROJECT=~/Paper_Validation
+mkdir -p "$PROJECT/MOAProfiler_Data"/{MOAProfiler_IN,MOAProfiler_OUT}
+
+git clone git@github.com:lorakuznetsova/MOAProfiler_Feature_Extractor.git \
+  "$PROJECT/MOAProfiler_Feature_Extractor"
+
+cd "$PROJECT/MOAProfiler_Feature_Extractor"
+git -c submodule.submodules/moa-profiler.url=git@github.com:lorakuznetsova/moa-profiler.git \
+    submodule update --init --recursive
+```
+Quick sanity:
+
+```bash
+test -f submodules/moa-profiler/efficientnet_pytorch/__init__.py && echo "OK: effnet"
+test -f submodules/moa-profiler/classification.py && echo "OK: classification"
+test -f assets/moaprofiler/model_best.dat && echo "OK: checkpoint"
+test -f assets/moaprofiler/channel_stats_compounds_raw.pkl && echo "OK: channel stats"
+```
+
+
