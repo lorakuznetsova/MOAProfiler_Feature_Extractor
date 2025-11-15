@@ -29,7 +29,7 @@ MOAProfiler_Data/
    │     ├─ ch1.tif
    │     └─ ...
    └─ manifest.csv
----
+```
 
 ## `manifest.csv` (rules)
 
