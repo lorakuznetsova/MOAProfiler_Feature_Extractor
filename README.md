@@ -1,3 +1,5 @@
+# MOAProfiler Feature Extractor — Reproducible Inference & Post-processing
+
 ## Contents
 - [Image preprocessing](#image-preprocessing-what-the-embedder-expects)
 - [`manifest.csv` rules](#manifestcsv-rules)
@@ -5,8 +7,6 @@
 - [Clone the repo + submodule](#clone-the-repo--submodule)
 - [Run the embedder](#run-the-embedder)
 - [Post-processing / normalization](#post-processing--normalization-cellpaintssl-style)
-
-# MOAProfiler Feature Extractor — Reproducible Inference & Post-processing
 
 This repo provides:
 - a **reproducible embedding runtime** for the MOAProfiler model (Pfizer) to extract well-level features from Cell Painting images; and
