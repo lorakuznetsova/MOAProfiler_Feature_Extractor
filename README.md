@@ -15,6 +15,7 @@ This repo provides:
 - No color tables, no multi-page TIFFs, no JPEG compression
 
 **Folder layout (example):**
+```
 MOAProfiler_Data/
 └─ MOAProfiler_IN/
    ├─ images/
