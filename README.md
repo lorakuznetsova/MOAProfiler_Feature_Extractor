@@ -16,14 +16,18 @@ This repo provides:
 
 **Folder layout (example):**
 MOAProfiler_Data/
-MOAProfiler_IN/
-images/
-A01_s1/
-ch1.tif ch2.tif ch3.tif ch4.tif ch5.tif
-A01_s2/
-ch1.tif ...
-manifest.csv
-
+└─ MOAProfiler_IN/
+   ├─ images/
+   │  ├─ A01_s1/
+   │  │  ├─ ch1.tif
+   │  │  ├─ ch2.tif
+   │  │  ├─ ch3.tif
+   │  │  ├─ ch4.tif
+   │  │  └─ ch5.tif
+   │  └─ A01_s2/
+   │     ├─ ch1.tif
+   │     └─ ...
+   └─ manifest.csv
 ---
 
 ## `manifest.csv` (rules)
