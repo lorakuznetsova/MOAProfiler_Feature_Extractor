@@ -120,17 +120,18 @@ python "$REPO/pipeline/embed_runner.py" \
 ```
 What to expect
 
-1) You’ll see >> loading checkpoint: ... and sites iterating.
+- You’ll see >> loading checkpoint: ... and sites iterating.
 
-2) Outputs go under $OUT (e.g., per_image_embeddings_with_filenames.csv).
+- Outputs go under $OUT (e.g., per_image_embeddings_with_filenames.csv).
 
 If something barks
 
-1) ModuleNotFoundError: efficientnet_pytorch → ensure
+- ModuleNotFoundError: efficientnet_pytorch → ensure
 export PYTHONPATH="$REPO:$REPO/submodules/moa-profiler" is set in the same shell that runs Python.
 
-2) FileNotFoundError: manifest.csv → run from "$IN" and ensure imagename is relative (starts with images/).
+- FileNotFoundError: manifest.csv → run from "$IN" and ensure imagename is relative (starts with images/).
 
-3) CUDA not required: this stack is CPU-only and consistent across machines.
+- CUDA not required: this stack is CPU-only and consistent across machines.
+
 
 
