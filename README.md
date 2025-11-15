@@ -132,6 +132,55 @@ export PYTHONPATH="$REPO:$REPO/submodules/moa-profiler" is set in the same shell
 - FileNotFoundError: manifest.csv → run from "$IN" and ensure imagename is relative (starts with images/).
 
 - CUDA not required: this stack is CPU-only and consistent across machines.
+## Post-processing / normalization (CellPaintSSL-style)
 
+We provide 3 scripts to convert per-image → per-well, build dataset.csv, and apply post-processing.
+
+### Environment: cellpaintssl_env (one-time)
+
+```bash
+# create + activate venv
+python3 -m venv ~/cellpaintssl_env
+source ~/cellpaintssl_env/bin/activate
+
+# install pinned requirements
+cd ~/Paper_Validation/MOAProfiler_Feature_Extractor
+pip install --upgrade pip
+# adjust case if your folder name differs
+pip install -r envs/cellpaintssl_env/requirements.txt
+```
+### Run the normalization scripts
+
+```bash
+# paths
+PROJECT=~/Paper_Validation
+REPO="$PROJECT/MOAProfiler_Feature_Extractor"
+IN="$PROJECT/MOAProfiler_Data/MOAProfiler_IN"
+OUT="$PROJECT/MOAProfiler_Data/MOAProfiler_OUT"
+
+source ~/cellpaintssl_env/bin/activate
+
+# 1) per-image -> per-well (median aggregate)
+python "$REPO/pipeline/1_convert_moa_profiler_cellpaintssl.py" \
+  --emb  "$OUT/per_image_embeddings_with_filenames.csv" \
+  --meta "$IN/manifest.csv" \
+  --well-out "$OUT/well_features.csv" \
+  --agg median
+
+# 2) dataset.csv (labels/metadata)
+python "$REPO/pipeline/2_prepare_cellpaintssl_dataset.py" \
+  --meta "$IN/manifest.csv" \
+  --dataset-out "$OUT/dataset.csv"
+
+# 3) postprocess (change --norm_method if you prefer)
+python "$REPO/pipeline/3_postprocess_cellpaintssl.py" \
+  --embedding_csv "$OUT/well_features.csv" \
+  --val_csv "$OUT/dataset.csv" \
+  --operation median \
+  --norm_method spherize_mad_robustize \
+  --out_well_csv "$OUT/well_features_normalized.csv" \
+  --out_agg_csv  "$OUT/agg_features_from_normalized.csv"
+```
+Available --norm_method: standardize, mad_robustize, spherize, spherize_mad_robustize (default), mad_robustize_spherize, spherize_standardize, standardize_spherize, no_post_proc.
 
 
