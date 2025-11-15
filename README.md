@@ -186,6 +186,17 @@ python "$REPO/pipeline/3_postprocess_cellpaintssl.py" \
   --out_well_csv "$OUT/well_features_normalized.csv" \
   --out_agg_csv  "$OUT/agg_features_from_normalized.csv"
 ```
-Available --norm_method: standardize, mad_robustize, spherize, spherize_mad_robustize (default), mad_robustize_spherize, spherize_standardize, standardize_spherize, no_post_proc.
+Available --norm_method:
+```
+- standardize
+- mad_robustize
+- spherize
+- spherize_mad_robustize        (default)
+- mad_robustize_spherize
+- spherize_standardize
+- standardize_spherize
+- no_post_proc
+```
+
 
 
