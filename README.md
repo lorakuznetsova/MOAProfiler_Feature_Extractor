@@ -67,8 +67,6 @@ You can keep env2.yml for documentation, but for reproducibility the freeze file
 
 ## Clone the repo + submodule
 
-### HTTPS (public):
-
 ```bash
 PROJECT=~/Paper_Validation
 mkdir -p "$PROJECT/MOAProfiler_Data"/{MOAProfiler_IN,MOAProfiler_OUT}
@@ -79,19 +77,6 @@ git clone https://github.com/lorakuznetsova/MOAProfiler_Feature_Extractor.git \
 cd "$PROJECT/MOAProfiler_Feature_Extractor"
 git submodule update --init --recursive
 ```
-SSH (private fork) — optional:
-
-```bash
-PROJECT=~/Paper_Validation
-mkdir -p "$PROJECT/MOAProfiler_Data"/{MOAProfiler_IN,MOAProfiler_OUT}
-
-git clone git@github.com:lorakuznetsova/MOAProfiler_Feature_Extractor.git \
-  "$PROJECT/MOAProfiler_Feature_Extractor"
-
-cd "$PROJECT/MOAProfiler_Feature_Extractor"
-git -c submodule.submodules/moa-profiler.url=git@github.com:lorakuznetsova/moa-profiler.git \
-    submodule update --init --recursive
-```
 Quick sanity:
 
 ```bash
@@ -100,5 +85,52 @@ test -f submodules/moa-profiler/classification.py && echo "OK: classification"
 test -f assets/moaprofiler/model_best.dat && echo "OK: checkpoint"
 test -f assets/moaprofiler/channel_stats_compounds_raw.pkl && echo "OK: channel stats"
 ```
+## Run the embedder
+
+Define these paths once per shell and reuse them.
+
+```bash
+# paths
+PROJECT=~/Paper_Validation
+REPO="$PROJECT/MOAProfiler_Feature_Extractor"
+IN="$PROJECT/MOAProfiler_Data/MOAProfiler_IN"
+OUT="$PROJECT/MOAProfiler_Data/MOAProfiler_OUT"
+
+# quick checks
+test -f "$REPO/submodules/moa-profiler/efficientnet_pytorch/__init__.py" && echo "effnet OK"
+test -f "$REPO/submodules/moa-profiler/classification.py" && echo "clf OK"
+test -f "$REPO/assets/moaprofiler/model_best.dat" && echo "ckpt OK"
+test -f "$REPO/assets/moaprofiler/channel_stats_compounds_raw.pkl" && echo "stats OK"
+test -f "$IN/manifest.csv" && echo "manifest OK"
+head -n 3 "$IN/manifest.csv"
+```
+Run:
+
+```bash
+conda activate env2
+export PYTHONPATH="$REPO:$REPO/submodules/moa-profiler"
+
+cd "$IN"   # manifest uses relative paths like images/.../ch1.tif
+
+python "$REPO/pipeline/embed_runner.py" \
+  --csv    manifest.csv \
+  --ckpt   "$REPO/assets/moaprofiler/model_best.dat" \
+  --stats  "$REPO/assets/moaprofiler/channel_stats_compounds_raw.pkl" \
+  --outdir "$OUT"
+```
+What to expect
+
+1) You’ll see >> loading checkpoint: ... and sites iterating.
+
+2) Outputs go under $OUT (e.g., per_image_embeddings_with_filenames.csv).
+
+If something barks
+
+1) ModuleNotFoundError: efficientnet_pytorch → ensure
+export PYTHONPATH="$REPO:$REPO/submodules/moa-profiler" is set in the same shell that runs Python.
+
+2) FileNotFoundError: manifest.csv → run from "$IN" and ensure imagename is relative (starts with images/).
+
+3) CUDA not required: this stack is CPU-only and consistent across machines.
 
 
