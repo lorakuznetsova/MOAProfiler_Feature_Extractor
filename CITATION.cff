@@ -1,0 +1,8 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it as below."
+title: "MOAProfiler_Feature_Extractor"
+authors:
+  - family-names: "Kuznetsova"
+    given-names: "Larisa"
+doi: 10.5281/zenodo.17617785
+url: "https://github.com/lorakuznetsova/MOAProfiler_Feature_Extractor"
