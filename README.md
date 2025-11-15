@@ -65,9 +65,9 @@ PY
 ```
 You can keep env2.yml for documentation, but for reproducibility the freeze file is simpler and stable across machines.
 
-Clone the repo + submodule
+## Clone the repo + submodule
 
-HTTPS (public):
+### HTTPS (public):
 
 ```bash
 PROJECT=~/Paper_Validation
