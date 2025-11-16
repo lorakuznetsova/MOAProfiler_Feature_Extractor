@@ -1,9 +1,24 @@
-This project integrates and vendors third-party components:
+MOAProfiler_Feature_Extractor
+Copyright (c) 2025, Xenia Kuznetsova and Larisa Kuznetsova
 
-1) MOAProfiler — Apache-2.0
-   Source: https://github.com/pfizer-opensource/moa-profiler
-   Vendored/modified file: pipeline/3_embed_runner.py
+This project reuses and adapts code from the following open-source projects:
 
-2) CellPaintSSL — BSD 3-Clause
-   Source: https://github.com/Bayer-Group/CellPaintSSL
-   Vendored/modified file: pipeline/post_proc_cellpaintssl.py
+1) MOAProfiler
+   Repository: https://github.com/pfizer-opensource/moa-profiler
+   License: Apache License, Version 2.0
+
+   Parts of the embedding / inference pipeline in this repository
+   (e.g., code in pipeline/embed_runner.py and related utilities) are
+   derived from or inspired by the MOAProfiler codebase.
+
+2) CellPaintSSL
+   Repository: https://github.com/Bayer-Group/CellPaintSSL
+   License: BSD 3-Clause License
+
+   Parts of the post-processing pipeline in this repository
+   (e.g., 3_postprocess_cellpaintssl.py) are derived from or inspired
+   by the CellPaintSSL codebase.
+
+Full copies of the upstream licenses are provided in the LICENSE files
+shipped with this repository.
+

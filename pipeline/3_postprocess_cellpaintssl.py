@@ -1,4 +1,13 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: BSD-3-Clause
+#
+# This file is adapted from the CellPaintSSL project:
+#   https://github.com/Bayer-Group/CellPaintSSL
+# which is licensed under the BSD 3-Clause License.
+#
+# Modifications Copyright (c) 2025, Xenia Kuznetsova and Larisa Kuznetsova.
+# See the accompanying LICENSE files in this repository root
+# for the full license text.
 """
 3_postprocess_cellpaintssl.py
 
