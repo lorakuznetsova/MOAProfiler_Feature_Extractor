@@ -8,7 +8,7 @@
 - [Run the embedder](#run-the-embedder)
 - [Post-processing / normalization](#post-processing--normalization-cellpaintssl-style)
 - [Data: MOAProfiler_IN](https://github.com/lorakuznetsova/MOAProfiler_Feature_Extractor/blob/main/README.md#data-moaprofiler_in-zenodo-29-gb)
-- Licensing and attribution
+- [Licensing and attribution](#licensing-and-attribution)
 
 This repo provides:
 - a **reproducible embedding runtime** for the MOAProfiler model (Pfizer) to extract well-level features from Cell Painting images; and
