@@ -224,5 +224,25 @@ After extraction, the directory structure should look like:
 
 Use this MOAProfiler_IN folder as the input data directory when running the
 embedding pipeline (e.g. pipeline/embed_runner.py) as described above.
+## Licensing and attribution
+
+The code in this repository is distributed under the terms of the license(s)
+included in the `LICENSE` file(s) in the repository root.
+
+This project reuses and adapts components from the following open-source projects:
+
+- **MOAProfiler** (Pfizer)  
+  Repository: https://github.com/pfizer-opensource/moa-profiler  
+  License: Apache License 2.0  
+  Parts of the embedding / inference pipeline (e.g. `pipeline/embed_runner.py`
+  and related utilities) are derived from or inspired by the MOAProfiler codebase.
+
+- **CellPaintSSL** (Bayer)  
+  Repository: https://github.com/Bayer-Group/CellPaintSSL  
+  License: BSD 3-Clause License  
+  Parts of the post-processing pipeline (e.g. `pipeline/3_postprocess_cellpaintssl.py`)
+  are derived from or inspired by the CellPaintSSL codebase.
+
+For full details, please refer to the `LICENSE` and `NOTICE` files shipped with this repository.
 
 
