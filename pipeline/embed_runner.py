@@ -5,9 +5,10 @@
 #   https://github.com/pfizer-opensource/moa-profiler
 # which is licensed under the Apache License, Version 2.0.
 #
-# Modifications Copyright (c) 2025, Xenia Kuznetsova and Larisa Kuznetsova.
+# Modifications Copyright (c) 2025, Xenia Kuznetsova.
 # See the accompanying LICENSE files in this repository root
 # for the full license text.
+
 import os
 import pickle
 import argparse

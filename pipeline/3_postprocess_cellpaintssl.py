@@ -5,7 +5,7 @@
 #   https://github.com/Bayer-Group/CellPaintSSL
 # which is licensed under the BSD 3-Clause License.
 #
-# Modifications Copyright (c) 2025, Xenia Kuznetsova and Larisa Kuznetsova.
+# Modifications Copyright (c) 2025, Xenia Kuznetsova.
 # See the accompanying LICENSE files in this repository root
 # for the full license text.
 """
