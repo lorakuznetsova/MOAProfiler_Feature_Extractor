@@ -1,4 +1,4 @@
 [submodule "submodules/moa-profiler"]
 	path = submodules/moa-profiler
-	url = https://github.com/lorakuznetsova/moa-profiler.git
+	url = https://github.com/XeniaKuznetsova/moa-profiler.git
 	branch = code-only
